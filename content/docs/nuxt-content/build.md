@@ -39,3 +39,11 @@ npm run export
 ```
 npm run serve
 ```
+
+## 備考
+
+実際このサイトの [Netlify](https://www.netlify.com/) でのビルド/デプロイ時の設定は以下:
+
+- Repository: github.com/jamband/mutantez
+- Build command: npm run build && npm run export
+- Publish directory: dist
