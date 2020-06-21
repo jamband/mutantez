@@ -1,0 +1,43 @@
+<template>
+  <div>
+    <h2>Articles <small>tag: {{ slug }}</small></h2>
+    <list-articles :docs="docs" />
+    <div class="text-right">
+      <nuxt-link :to="{ name: 'articles' }">すべての記事一覧を見る</nuxt-link>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  validate ({ params }) {
+    return /^[a-z]+$/.test(params.slug)
+  },
+  async asyncData ({ $content, params }) {
+    const slug = params.slug || ''
+    const path = 'articles'
+    const docs = await $content(path, { deep: true })
+      .where({ tags: { $contains: slug } })
+      .sortBy('date', 'desc')
+      .fetch()
+
+    return {
+      docs,
+      slug
+    }
+  },
+  head () {
+    return {
+      title: `タグ: ${this.slug} での記事一覧`
+    }
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+h2 {
+  small {
+    font-size: 60%;
+  }
+}
+</style>

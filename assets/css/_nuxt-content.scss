@@ -1,0 +1,45 @@
+.nuxt-content {
+  h2,
+  h3 {
+    border-bottom: 1px solid var(--gray);
+    margin: 2rem 0 1.3rem;
+    padding: 0.6rem 0;
+
+    & > a {
+      text-decoration: none;
+
+      &::before {
+        content: "#";
+        margin-left: -20px;
+        opacity: 0;
+        padding-right: 5px;
+      }
+    }
+
+    &:hover {
+      & > a::before {
+        opacity: 1;
+      }
+    }
+  }
+
+  &-highlight {
+    margin-bottom: 2rem;
+
+    .filename {
+      background-color: var(--light);
+      margin: 0;
+      padding: 0 5px;
+      position: relative;
+      top: 2px;
+    }
+
+    .line-numbers {
+      margin: 0;
+    }
+
+    code {
+      font-size: 14px;
+    }
+  }
+}

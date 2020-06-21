@@ -1,0 +1,43 @@
+@import "~bootstrap/scss/functions";
+
+// Color system
+$gray:        #eeefef;
+$light:       #f6f6f9;
+$primary:     #5e5e5f;
+
+// Options
+$enable-rounded:          false;
+$enable-transitions:      false;
+$enable-caret:            false;
+$enable-validation-icons: false;
+
+// Body
+$body-color: $primary;
+
+// Links
+$link-hover-color:  $primary;
+$link-decoration:   underline;
+
+// Grid containers
+$grid-breakpoints: (
+  xs: 0,
+  md: 740px
+);
+
+@include _assert-ascending($grid-breakpoints,"$grid-breakpoints");
+@include _assert-starts-at-zero ($grid-breakpoints, "$grid-breakpoints");
+
+$container-max-widths: (
+  md: 720px
+);
+
+@include _assert-ascending ($container-max-widths, "$container-max-widths");
+
+// Typography
+$font-family-sans-serif: "Source Sans Pro", "游ゴシック体", "Yu Gothic", yugothic sans-serif;
+
+$font-size-base:              1rem;
+
+$h1-font-size:                $font-size-base * 2;
+$h2-font-size:                $font-size-base * 1.75;
+$h3-font-size:                $font-size-base * 1.5;
