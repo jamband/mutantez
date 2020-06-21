@@ -10,15 +10,20 @@
 
       &::before {
         content: "#";
-        margin-left: -20px;
-        opacity: 0;
         padding-right: 5px;
+
+        @include media-breakpoint-up(md) {
+          margin-left: -20px;
+          opacity: 0;
+        }
       }
     }
 
-    &:hover {
-      & > a::before {
-        opacity: 1;
+    @include media-breakpoint-up(md) {
+      &:hover {
+        & > a::before {
+          opacity: 1;
+        }
       }
     }
   }
