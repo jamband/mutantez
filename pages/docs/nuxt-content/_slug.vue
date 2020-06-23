@@ -3,6 +3,9 @@
     <h1>{{ doc.title }}</h1>
     <nuxt-content :document="doc" />
     <pagination-minimal :prev="prev" :next="next" />
+    <div class="text-right">
+      最終更新日: {{ $format.date(doc.updatedAt) }}
+    </div>
   </article>
 </template>
 
