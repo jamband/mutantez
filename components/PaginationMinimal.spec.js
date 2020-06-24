@@ -1,7 +1,7 @@
 import { shallowMount, RouterLinkStub } from '@vue/test-utils'
 import PaginationMinimal from '~/components/PaginationMinimal'
 
-const factory = (props = {}) => {
+const factory = ({ props }) => {
   return shallowMount(PaginationMinimal, {
     propsData: props,
     stubs: {
@@ -11,16 +11,21 @@ const factory = (props = {}) => {
 }
 
 test('{ prev: null, next: null }', () => {
-  const wrapper = factory()
+  const wrapper = factory({
+    props: {
+    }
+  })
   const a = wrapper.findAll('a')
   expect(a.length).toBe(0)
 })
 
 test('{ prev: something, next: null }', () => {
   const wrapper = factory({
-    prev: {
-      title: 'Prev',
-      path: '/to/prev'
+    props: {
+      prev: {
+        title: 'Prev',
+        path: '/to/prev'
+      }
     }
   })
   const a = wrapper.findAll('a')
@@ -31,9 +36,11 @@ test('{ prev: something, next: null }', () => {
 
 test('{ prev: null, next: something }', () => {
   const wrapper = factory({
-    next: {
-      title: 'Next',
-      path: '/to/next'
+    props: {
+      next: {
+        title: 'Next',
+        path: '/to/next'
+      }
     }
   })
   const a = wrapper.findAll('a')
@@ -44,13 +51,15 @@ test('{ prev: null, next: something }', () => {
 
 test('{ prev: something, next: something }', () => {
   const wrapper = factory({
-    prev: {
-      title: 'Prev',
-      path: '/to/prev'
-    },
-    next: {
-      title: 'Next',
-      path: '/to/next'
+    props: {
+      prev: {
+        title: 'Prev',
+        path: '/to/prev'
+      },
+      next: {
+        title: 'Next',
+        path: '/to/next'
+      }
     }
   })
   const a = wrapper.findAll('a')

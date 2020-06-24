@@ -1,7 +1,7 @@
 import { shallowMount, RouterLinkStub } from '@vue/test-utils'
 import ListArticles from '~/components/ListArticles'
 
-const factory = (props = {}) => {
+const factory = ({ props }) => {
   return shallowMount(ListArticles, {
     propsData: props,
     stubs: {
@@ -22,7 +22,11 @@ const docs = [
 ]
 
 test('elements', () => {
-  const wrapper = factory({ docs })
+  const wrapper = factory({
+    props: {
+      docs
+    }
+  })
   const li = wrapper.findAll('li')
   expect(li.length).toBe(3)
   expect(li.at(0).text()).toContain(docs[0].title)
