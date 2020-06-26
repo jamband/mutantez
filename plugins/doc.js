@@ -2,19 +2,20 @@ import path from 'path'
 import spawn from 'cross-spawn'
 
 const timestamp = (type, filePath) => {
-  try {
-    const basename = path.basename(filePath)
-    const command = type === firstCreated.name
-      ? `git log --reverse --format=%at ${basename} | head -n 1`
-      : `git log -1 --format=%at ${basename}`
+  const basename = path.basename(filePath)
+  const command = type === firstCreated.name
+    ? `git log --reverse --format=%at ${basename} | head -n 1`
+    : `git log -1 --format=%at ${basename}`
 
-    const options = {
-      shell: true,
-      cwd: path.dirname(filePath)
+  const options = {
+    shell: true,
+    cwd: path.dirname(filePath)
+  }
+  const proc = spawn.sync(command, [], options)
+  if (proc.error === null) {
+    if (proc.stderr.toString('utf-8') === '') {
+      return parseInt(proc.stdout.toString('utf-8')) * 1000
     }
-    const buffter = spawn.sync(command, [], options)
-    return parseInt(buffter.stdout.toString('utf-8')) * 1000
-  } catch (e) {
   }
 }
 
