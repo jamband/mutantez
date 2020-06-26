@@ -4,8 +4,8 @@
     <nuxt-content :document="doc" />
     <pagination-minimal :prev="prev" :next="next" />
     <div class="text-right">
-      <!-- createdAt/updatedAt from gets the value from git log -->
-      <!-- doc.createdAt/doc.updatedAt from gets the value from birthtime/mtime -->
+      <!-- createdAt/updatedAt gets the value from git log -->
+      <!-- doc.createdAt/doc.updatedAt gets the value from birthtime/mtime -->
       作成日: {{ $format.date(createdAt || doc.createdAt ) }}<br>
       最終更新日: {{ $format.date(updatedAt || doc.updatedAt) }}
     </div>
