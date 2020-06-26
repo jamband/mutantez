@@ -1,8 +1,8 @@
 import { shallowMount, RouterLinkStub } from '@vue/test-utils'
-import ListArticles from '~/components/ListArticles'
+import ArticleList from '~/components/ArticleList'
 
 const factory = ({ props }) => {
-  return shallowMount(ListArticles, {
+  return shallowMount(ArticleList, {
     propsData: props,
     stubs: {
       'nuxt-link': RouterLinkStub

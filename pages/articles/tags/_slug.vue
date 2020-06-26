@@ -1,10 +1,12 @@
 <template>
   <div>
     <h2>Articles <small>tag: {{ slug }}</small></h2>
-    <list-articles :docs="docs" />
+    <article-list :docs="docs" />
     <div class="text-right">
       <nuxt-link :to="{ name: 'articles' }">すべての記事一覧を見る</nuxt-link>
     </div>
+    <h2>Tags</h2>
+    <article-tag-list />
   </div>
 </template>
 

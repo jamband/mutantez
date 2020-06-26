@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2>Articles</h2>
-    <list-articles :docs="articles" />
+    <article-list :docs="docs" />
     <div class="text-right">
       <nuxt-link :to="{ name: 'articles' }">すべての記事一覧を見る</nuxt-link>
     </div>
@@ -15,13 +15,13 @@
 <script>
 export default {
   async asyncData ({ $content }) {
-    const articles = await $content('articles', { deep: true })
+    const docs = await $content('articles', { deep: true })
       .sortBy('date', 'desc')
       .limit(10)
       .fetch()
 
     return {
-      articles
+      docs
     }
   },
   head () {
