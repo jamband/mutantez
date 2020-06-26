@@ -23,7 +23,6 @@ content/
 ```[content/docs/nuxt-content/wrting.md]
 ---
 title: コンテンツを書く
-description: nuxt/content でコンテンツを書く
 position: 3
 ---
 
@@ -37,7 +36,6 @@ position: 3
 {
   body: Object
   title: "コンテンツを書く"
-  description: "nuxt/content でコンテンツを書く"
   dir: "/docs/nuxt-content"
   extension: ".md"
   position: 3
