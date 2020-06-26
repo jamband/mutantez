@@ -4,7 +4,10 @@
     <nuxt-content :document="doc" />
     <pagination-minimal :prev="prev" :next="next" />
     <div class="text-right">
-      最終更新日: {{ $format.date(doc.updatedAt) }}
+      <!-- createdAt/updatedAt from gets the value from git log -->
+      <!-- doc.createdAt/doc.updatedAt from gets the value from birthtime/mtime -->
+      作成日: {{ $format.date(createdAt || doc.createdAt ) }}<br>
+      最終更新日: {{ $format.date(updatedAt || doc.updatedAt) }}
     </div>
   </article>
 </template>
@@ -28,10 +31,20 @@ export default {
       .surround(slug)
       .fetch()
 
+    let createdAt, updatedAt
+    if (process.server) {
+      const { firstCreated, lastUpdated } = require('~/plugins/doc')
+      const path = `${process.cwd()}/content/${doc.path}${doc.extension}`
+      createdAt = firstCreated(path)
+      updatedAt = lastUpdated(path)
+    }
+
     return {
       doc,
       prev,
-      next
+      next,
+      createdAt,
+      updatedAt
     }
   },
   head () {
