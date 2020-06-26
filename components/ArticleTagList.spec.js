@@ -20,8 +20,9 @@ const factory = () => {
   })
 }
 
-test('route and test', () => {
+test('route and text', () => {
   const a = factory().findAll('a')
+  expect(a.length).toBe(3)
   for (const [i, tag] of Object.entries(tags)) {
     expect(a.at(i).props().to).toEqual({ name: 'articles-tags-slug', params: { slug: tag } })
     expect(a.at(i).text()).toBe(tag)
