@@ -61,7 +61,10 @@ export default {
     }
   },
   head () {
-    const title = `${this.theme.title}: ${this.doc.title}`
+    const title = this.doc.slug === 'index'
+      ? this.theme.title
+      : `${this.theme.title}: ${this.doc.title}`
+
     return {
       title,
       meta: [
