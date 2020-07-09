@@ -2,7 +2,9 @@
   <article>
     <h1>{{ doc.title }}</h1>
     <nuxt-content :document="doc" />
-    <p class="text-right">作成日: {{ $format.date(doc.date) }}</p>
+    <div class="pb-3 text-right">
+      作成日: {{ $format.date(doc.date) }}
+    </div>
   </article>
 </template>
 

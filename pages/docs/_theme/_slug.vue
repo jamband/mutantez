@@ -3,7 +3,7 @@
     <h1>{{ doc.title }}</h1>
     <nuxt-content :document="doc" />
     <pagination-minimal :prev="prev" :next="next" />
-    <div class="text-right">
+    <div class="pb-3 text-right">
       <!-- createdAt/updatedAt gets the value from git log -->
       <!-- doc.createdAt/doc.updatedAt gets the value from birthtime/mtime -->
       作成日: {{ $format.date(createdAt || doc.createdAt ) }}<br>
