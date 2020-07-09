@@ -9,10 +9,10 @@
     "clean": "rm -rf .nuxt dist node_modules"
   },
   "dependencies": {
-    "@nuxt/content": "^1.3.2",
+    "@nuxt/content": "^1.4.1",
     "@nuxtjs/pwa": "^3.0.0-beta.20",
     "bootstrap": "^4.5.0",
-    "nuxt": "^2.13.1",
+    "nuxt": "^2.13.3",
     "prism-themes": "^1.4.0"
   },
   "devDependencies": {
@@ -23,16 +23,16 @@
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^26.1.0",
-    "eslint": "^7.3.1",
+    "eslint": "^7.4.0",
     "eslint-plugin-nuxt": "^1.0.0",
     "fibers": "^5.0.0",
     "jest": "^26.1.0",
-    "sass": "^1.26.9",
-    "sass-loader": "^8.0.2",
+    "sass": "^1.26.10",
+    "sass-loader": "^9.0.1",
     "stylelint": "^13.6.1",
     "stylelint-config-standard": "^20.0.0",
     "stylelint-order": "^4.1.0",
     "stylelint-scss": "^3.18.0",
-    "vue-jest": "^3.0.5"
+    "vue-jest": "^3.0.6"
   }
 }

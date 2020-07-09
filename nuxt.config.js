@@ -1,5 +1,3 @@
-import Fiber from 'fibers'
-import Sass from 'sass'
 import { APP_NAME, APP_URL, APP_DESCRIPTION } from './plugins/constants'
 
 export default {
@@ -42,14 +40,6 @@ export default {
   },
   build: {
     // analyze: true,
-    loaders: {
-      scss: {
-        implementation: Sass,
-        sassOptions: {
-          fiber: Fiber
-        }
-      }
-    }
   },
   generate: {
     fallback: '404.html',

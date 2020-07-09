@@ -26,11 +26,4 @@ Generating Nuxt.js project in mutantez
 ? Development tools: jsconfig.json (Recommended for VS Code)
 ```
 
-準備はこれで OK。執筆時の環境は以下。
-
-## 環境
-
-- Node.js 12.x
-- create-nuxt-app 3.1.x
-- Nuxt.js 2.13.x
-- nuxt/content 1.3.x
+準備はこれで OK。

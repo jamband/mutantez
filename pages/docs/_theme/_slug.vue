@@ -13,10 +13,17 @@
 </template>
 
 <script>
+import { description } from '~/plugins/meta'
+
 export default {
   async asyncData ({ $content, params, error }) {
-    const path = 'docs/nuxt-content'
-    const slug = params.slug
+    const path = `docs/${params.theme}`
+
+    const theme = await $content(path, 'index')
+      .only(['title'])
+      .fetch()
+
+    const slug = params.slug || 'index'
 
     let doc
     try {
@@ -40,6 +47,7 @@ export default {
     }
 
     return {
+      theme,
       doc,
       prev,
       next,
@@ -47,9 +55,20 @@ export default {
       updatedAt
     }
   },
+  computed: {
+    metaDescription () {
+      return description(this.doc.body)
+    }
+  },
   head () {
+    const title = `${this.theme.title}: ${this.doc.title}`
     return {
-      title: `nuxt/content: ${this.doc.title}`
+      title,
+      meta: [
+        { hid: 'description', name: 'description', content: this.metaDescription },
+        { hid: 'og:title', property: 'og:title', content: title },
+        { hid: 'og:description', property: 'og:description', content: this.metaDescription }
+      ]
     }
   }
 }
