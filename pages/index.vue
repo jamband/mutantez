@@ -6,7 +6,7 @@
       <nuxt-link :to="{ name: 'articles' }">すべての記事一覧を見る</nuxt-link>
     </div>
     <h2>Documents</h2>
-    <ul>
+    <ul class="list-unstyled">
       <li v-for="doc in docs" :key="doc.path">
         {{ $format.date(doc.date) }}
         <nuxt-link :to="doc.path">{{ doc.title }}</nuxt-link>
