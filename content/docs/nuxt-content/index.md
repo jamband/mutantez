@@ -1,27 +1,27 @@
 ---
-title: nuxt/content
+title: Nuxt Content
 date: 2020-06-12
 position: 1
 ---
 
 ## はじめに
 
-このサイトは nuxt/content を使っている。
+このサイトは Nuxt Content を使っている。
 
-ということで、ここでは、実際このサイトをどのように作成していったかを簡単に説明していく。基本的なことしか書いていないので、より詳細なものが知りたい人は <nuxt-link :to="{ name: 'docs-theme-slug', params: { theme: 'nuxt-content', slug: 'conclusion' } }">nuxt/content: まとめ</nuxt-link> などを参考にしてほしい。
+ということで、ここでは、実際このサイトをどのように作成していったかを簡単に説明していく。基本的なことしか書いていないので、より詳細なものが知りたい人は <nuxt-link :to="{ name: 'docs-theme-slug', params: { theme: 'nuxt-content', slug: 'conclusion' } }">Nuxt Content: まとめ</nuxt-link> などを参考にしてほしい。
 
 ## 環境
 
 - Node.js 12.x
 - create-nuxt-app 3.1.x
 - Nuxt.js 2.13.x
-- nuxt/content 1.4.x
+- Nuxt Content 1.4.x
 
 ## ページ一覧
 
 <doc-list theme="nuxt-content"></doc-list>
 
-## nuxt/content とは
+## Nuxt Content とは
 
 Git ベースの Headless CMS。Markdown/JSON/YAML/CSV ファイルなどで書かれたコンテンツを Git で管理しつつ MongoDB のような API を介して読み込み、いい感じ表示してくれる、といったもの。
 
