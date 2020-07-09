@@ -43,10 +43,10 @@ export default {
 
 front matter に追加した position でソートすれば簡単なページネーションが作成できる:
 
-```vue[pages/docs/nuxt-content/_slug.vue]
+```vue[pages/docs/_theme/_slug.vue]
 <template>
   <article>
-    <h2>{{ doc.title }}</h2>
+    <h1>{{ doc.title }}</h1>
     <nuxt-content :document="doc" />
     <pagination-minimal :prev="prev" :next="next" />
   </article>
@@ -55,8 +55,8 @@ front matter に追加した position でソートすれば簡単なページネ
 <script>
 export default {
   async asyncData ({ $content, params, error }) {
-    const path = 'docs/nuxt-content'
-    const slug = params.slug
+    const path = `docs/${params.theme}`
+    const slug = params.slug || 'index'
 
     let doc
     try {

@@ -7,10 +7,10 @@ position: 5
 
 NuxtContent コンポーネントを使用して、コンテンツを表示する。
 
-```vue[pages/docs/nuxt-content/_slug.vue]
+```vue[pages/docs/_theme/_slug.vue]
 <template>
   <article>
-    <h2>{{ doc.title }}</h2>
+    <h1>{{ doc.title }}</h1>
     <nuxt-content :document="doc" />
   </article>
 </template>
@@ -18,8 +18,8 @@ NuxtContent コンポーネントを使用して、コンテンツを表示す�
 <script>
 export default {
   async asyncData ({ $content, params, error }) {
-    const path = 'docs/nuxt-content'
-    const slug = params.slug
+    const path = `docs/${params.theme}`
+    const slug = params.slug || 'index'
 
     let doc
     try {
