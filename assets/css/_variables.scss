@@ -6,7 +6,6 @@ $light:       #f6f6f9;
 $primary:     #5e5e5f;
 
 // Options
-$enable-rounded:          false;
 $enable-transitions:      false;
 $enable-caret:            false;
 $enable-validation-icons: false;
@@ -37,6 +36,8 @@ $container-max-widths: (
 $font-family-sans-serif: "Source Sans Pro", "游ゴシック体", "Yu Gothic", yugothic sans-serif;
 
 $font-size-base:              1rem;
+
+$line-height-base:            1.6;
 
 $h1-font-size:                $font-size-base * 2;
 $h2-font-size:                $font-size-base * 1.75;

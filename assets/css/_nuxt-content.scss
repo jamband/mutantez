@@ -1,3 +1,5 @@
+@use "sass:color";
+
 .nuxt-content {
   h2,
   h3 {
@@ -8,21 +10,30 @@
 
   &-highlight {
     margin-bottom: 2rem;
+    position: relative;
 
-    .filename {
-      background-color: var(--light);
-      margin: 0;
-      padding: 0 5px;
-      position: relative;
-      top: 2px;
+    > pre {
+      border-radius: $border-radius;
     }
 
-    .line-numbers {
-      margin: 0;
+    .filename {
+      background-color: color.scale(#263238, $lightness: 10%);
+      border-top-left-radius: $border-radius;
+      color: var(--light);
+      font-size: 90%;
+      left: 0;
+      padding: 0 0.5rem;
+      position: absolute;
+      top: 0;
+      z-index: 2;
+
+      + pre {
+        padding-top: 2rem;
+      }
     }
 
     code {
-      font-size: 14px;
+      font-size: 85%;
     }
   }
 }
