@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Articles <small>tag: {{ slug }}</small></h2>
+    <h2>Articles <span class="text-base">tag: {{ slug }}</span></h2>
     <article-list :docs="docs" />
     <p v-if="!docs.length">上記で絞られたタグに関連する記事は見つかりませんでした</p>
     <div class="text-right">
@@ -36,11 +36,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-h2 {
-  small {
-    font-size: 60%;
-  }
-}
-</style>

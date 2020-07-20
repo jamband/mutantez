@@ -5,6 +5,8 @@ position: 7
 
 ## コマンドの実行
 
+ビルドする:
+
 ```
 npm run build
 npm run export

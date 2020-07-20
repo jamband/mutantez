@@ -1,17 +1,5 @@
 <template>
-  <nav class="header text-center mb-5">
-    <nuxt-link :to="{ name:'index' }" class="header-link text-decoration-none">{{ $app.name }}</nuxt-link>
+  <nav class="mb-10 p-3 text-center bg-gray-100">
+    <nuxt-link :to="{ name:'index' }" class="no-underline">{{ $app.name }}</nuxt-link>
   </nav>
 </template>
-
-<style scoped>
-.header {
-  background-color: var(--light);
-}
-
-.header-link {
-  display: inline-block;
-  margin: 0.1rem;
-  padding: 0.5rem;
-}
-</style>

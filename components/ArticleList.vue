@@ -1,5 +1,5 @@
 <template>
-  <ul class="list-unstyled">
+  <ul>
     <li v-for="doc in docs" :key="doc.slug">
       {{ $format.date(doc.date) }}
       <nuxt-link :to="doc.path">{{ doc.title }}</nuxt-link>

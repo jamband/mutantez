@@ -15,6 +15,8 @@ npm i -D sass stylelint stylelint-config-standard stylelint-order stylelint-scss
 
 ## 設定ファイルの作成
 
+.stylelintrc ファイルの作成:
+
 ```json[.stylelintrc]
 {
   "extends": [

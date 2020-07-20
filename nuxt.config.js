@@ -21,7 +21,7 @@ export default {
     ]
   },
   css: [
-    '~/assets/css/app.scss'
+    '~/assets/css/content.css'
   ],
   plugins: [
     '~/plugins/app',
@@ -29,7 +29,8 @@ export default {
   ],
   buildModules: [
     '@nuxtjs/eslint-module',
-    '@nuxtjs/stylelint-module'
+    '@nuxtjs/stylelint-module',
+    '@nuxtjs/tailwindcss'
   ],
   modules: [
     '@nuxt/content',

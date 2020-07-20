@@ -1,20 +1,7 @@
 <template>
-  <div>
+  <div class="min-h-screen flex flex-col">
     <the-header />
-    <div class="container">
-      <nuxt />
-    </div>
+    <nuxt class="max-w-screen-md container mx-auto flex-grow" />
     <the-footer />
   </div>
 </template>
-
-<style>
-html {
-  min-height: 100%;
-  position: relative;
-}
-
-body {
-  margin-bottom: 45px;
-}
-</style>

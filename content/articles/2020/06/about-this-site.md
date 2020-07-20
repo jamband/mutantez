@@ -14,7 +14,7 @@ Nuxt.js のモジュールである Nuxt Content をきっかけに、このサ�
 - [Netlify](https://www.netlify.com/)
 - [Nuxt.js](https://nuxtjs.org/)
 - [Nuxt Content](https://content.nuxtjs.org/)
-- [Bootstrap](https://getbootstrap.com/)
+- [Tailwind CSS](https://tailwindcss.com/)
 
 ## 関連リンク
 
