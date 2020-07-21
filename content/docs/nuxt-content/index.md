@@ -13,6 +13,7 @@ position: 1
 ## 環境
 
 - Node.js 12.x
+- Yarn 1.22.x
 - create-nuxt-app 3.1.x
 - Nuxt.js 2.13.x
 - Nuxt Content 1.4.x

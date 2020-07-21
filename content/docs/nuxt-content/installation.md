@@ -16,7 +16,7 @@ create-nuxt-app v3.x.x
 Generating Nuxt.js project in mutantez
 ? Project name: mutantez
 ? Programming language: JavaScript
-? Package manager: Npm
+? Package manager: Yarn
 ? UI framework: Tailwind CSS
 ? Nuxt.js modules: Progressive Web App (PWA), Content
 ? Linting tools: ESLint, StyleLint
