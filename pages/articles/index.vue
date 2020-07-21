@@ -2,7 +2,7 @@
   <div>
     <h2>Articles</h2>
     <article-list :docs="docs" />
-    <h2>Tags</h2>
+    <h2 class="mt-8">Tags</h2>
     <article-tag-list />
   </div>
 </template>

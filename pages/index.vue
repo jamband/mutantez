@@ -2,7 +2,7 @@
   <div>
     <h2>Articles</h2>
     <article-list :docs="articles" />
-    <div class="text-right">
+    <div class="mt-5 mb-8 text-right">
       <nuxt-link :to="{ name: 'articles' }">すべての記事一覧を見る</nuxt-link>
     </div>
     <h2>Documents</h2>
