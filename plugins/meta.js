@@ -6,5 +6,6 @@ export function description (node) {
     return node.children.map(child => description(child))
       .join('')
       .slice(0, 90)
+      .trim()
   }
 }
