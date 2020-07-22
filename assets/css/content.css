@@ -11,6 +11,10 @@
 
   & ol {
     @apply list-inside list-decimal ml-3;
+
+    & a {
+      @apply pl-3;
+    }
   }
 
   & code {
