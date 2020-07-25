@@ -7,7 +7,7 @@ module.exports = {
       md: '720px'
     },
     fontFamily: {
-      sans: ['"Source Sans Pro"', '"游ゴシック体"', '"Yu Gothic"', '"yugothic"', 'sans-serif']
+      sans: ['"Source Sans Pro"', '"Yu Gothic"', 'YuGothic', 'sans-serif']
     },
     fontSize: {
       sm: ['14px', '20px'],
