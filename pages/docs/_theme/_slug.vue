@@ -19,9 +19,14 @@ export default {
   async asyncData ({ $content, params, error }) {
     const path = `docs/${params.theme}`
 
-    const theme = await $content(path, 'index')
-      .only(['title'])
-      .fetch()
+    let theme
+    try {
+      theme = await $content(path, 'index')
+        .only(['title'])
+        .fetch()
+    } catch (e) {
+      return error({ statusCode: 404, message: 'ページが見つかりませんでした' })
+    }
 
     const slug = params.slug || 'index'
 
