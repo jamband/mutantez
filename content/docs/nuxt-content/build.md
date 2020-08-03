@@ -8,14 +8,13 @@ position: 7
 ビルドする:
 
 ```
-yarn build
-yarn export
+yarn generate
 ```
 
 あとは以下を叩いて、ブラウザ (http://localhost:3000) で確認する:
 
 ```
-yarn serve
+yarn start
 ```
 
 ## 備考
@@ -23,5 +22,5 @@ yarn serve
 実際このサイトの [Netlify](https://www.netlify.com/) でのビルド/デプロイ時の設定は以下:
 
 - Repository: github.com/jamband/mutantez
-- Build command: yarn build && yarn export
+- Build command: yarn generate
 - Publish directory: dist

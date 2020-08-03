@@ -5,7 +5,7 @@ position: 6
 
 ## ページネーションコンポーネントの作成
 
-$content には [surround](https://content.nuxtjs.org/fetching#surroundslug-options) というメソッドがあり、これで前後の結果を取得し、ページネーションの「前へ」と「次へ」みたいなリンクが作れる。ページネーション部分をコンポーネント化して、_slug.vue から呼び出してみる:
+$content には [surround](https://content.nuxtjs.org/fetching/#surroundslug-options) というメソッドがあり、これで前後の結果を取得し、ページネーションの「前へ」と「次へ」みたいなリンクが作れる。ページネーション部分をコンポーネント化して、_slug.vue から呼び出してみる:
 
 ```vue[components/PaginationMinimal.vue]
 <template>
@@ -82,3 +82,7 @@ export default {
 ```
 
 以上で、今見ているページなどを簡単に作ることができる。
+
+## 関連リンク
+
+[Snippets - Nuxt Content](https://content.nuxtjs.org/snippets/#pagination)

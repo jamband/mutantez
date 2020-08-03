@@ -49,4 +49,4 @@ position: 3
 
 ## 関連リンク
 
-- [Writing content - Nuxt Content](https://content.nuxtjs.org/writing)
+- [Writing content - Nuxt Content](https://content.nuxtjs.org/writing/)

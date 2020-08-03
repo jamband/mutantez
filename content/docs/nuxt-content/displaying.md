@@ -40,4 +40,4 @@ export default {
 
 ## 関連リンク
 
-- [Displaying content - Nuxt Content](https://content.nuxtjs.org/displaying)
+- [Displaying content - Nuxt Content](https://content.nuxtjs.org/displaying/)

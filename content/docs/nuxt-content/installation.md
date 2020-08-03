@@ -6,7 +6,7 @@ position: 2
 ## プロジェクトの作成
 
 ```
-npx create-nuxt-app mutantez
+yarn create nuxt-app mutantez
 ```
 
 構成は以下:
@@ -23,7 +23,7 @@ Generating Nuxt.js project in mutantez
 ? Testing framework: Jest
 ? Rendering mode: Universal (SSR / SSG)
 ? Deployment target: Static (Static/JAMStack hosting)
-? Development tools: jsconfig.json (Recommended for VS Code)
+? Development tools: jsconfig.json (Recommended for VS Code if you're not using typescript)
 ```
 
 準備はこれで OK。

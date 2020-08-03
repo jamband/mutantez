@@ -2,16 +2,16 @@
   "private": true,
   "scripts": {
     "dev": "nuxt",
-    "build": "nuxt build",
-    "export": "nuxt export",
-    "serve": "nuxt serve",
+    "generate": "nuxt generate",
+    "start": "nuxt start",
     "test": "jest",
+    "clear": "rm -rf .nuxt dist",
     "clean": "rm -rf .nuxt dist node_modules"
   },
   "dependencies": {
-    "@nuxt/content": "^1.4.1",
+    "@nuxt/content": "^1.5.3",
     "@nuxtjs/pwa": "^3.0.0-beta.20",
-    "nuxt": "^2.13.3",
+    "nuxt": "^2.14.0",
     "prism-themes": "^1.4.0"
   },
   "devDependencies": {

@@ -31,4 +31,4 @@ export default {
 
 ## 関連リンク
 
-- [Fetching content - Nuxt Content](https://content.nuxtjs.org/fetching)
+- [Fetching content - Nuxt Content](https://content.nuxtjs.org/fetching/)
