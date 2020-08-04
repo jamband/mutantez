@@ -11,8 +11,6 @@ position: 8
 - [GitHub @nuxt/content-theme-docs](https://github.com/nuxt/content/tree/dev/packages/theme-docs)
 - [GitHub - nuxt/nuxtjs.org](https://github.com/nuxt/nuxtjs.org)
 
-<p></p>
-
 また、[このサイトのリポジトリ](https://github.com/jamband/mutantez) も GitHub にあるので、興味があれば参考にしてほしい。
 
 ## 関連リンク

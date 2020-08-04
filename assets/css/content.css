@@ -9,6 +9,10 @@
     @apply list-inside list-disc ml-3;
   }
 
+  & ul + p {
+    @apply mt-5;
+  }
+
   & ol {
     @apply list-inside list-decimal ml-3;
 
