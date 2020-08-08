@@ -10,8 +10,8 @@ module.exports = {
       sans: ['"Source Sans Pro"', '"Yu Gothic"', 'YuGothic', 'sans-serif']
     },
     fontSize: {
-      sm: ['14px', '20px'],
-      base: ['16px', '1.65'],
+      sm: ['15px', '20px'],
+      base: ['17px', '1.65'],
       '3xl': '1.65rem',
       '4xl': '2rem'
     },

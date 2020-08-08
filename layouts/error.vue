@@ -2,7 +2,7 @@
   <div>
     <h1>#{{ error.statusCode }}</h1>
     {{ error.message }}。
-    <p class="text-center mt-5">
+    <p class="mt-5 text-center">
       <nuxt-link :to="{ name: 'index' }">ホームに戻る</nuxt-link>
     </p>
   </div>
