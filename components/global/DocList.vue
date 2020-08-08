@@ -1,9 +1,11 @@
 <template>
-  <ol>
-    <li v-for="doc in docs" :key="doc.slug">
-      <nuxt-link :to="doc.path">{{ doc.title }}</nuxt-link>
-    </li>
-  </ol>
+  <nav aria-label="Documents navigation">
+    <ol>
+      <li v-for="doc in docs" :key="doc.slug">
+        <nuxt-link :to="doc.path">{{ doc.title }}</nuxt-link>
+      </li>
+    </ol>
+  </nav>
 </template>
 
 <script>

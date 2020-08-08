@@ -1,12 +1,12 @@
 <template>
-  <div class="flex my-12 text-center">
+  <nav class="flex my-12 text-center" aria-label="Page navigation">
     <div class="w-1/2">
       <nuxt-link v-if="prev" :to="prev.path">← {{ prev.title }}</nuxt-link>
     </div>
     <div class="w-1/2">
       <nuxt-link v-if="next" :to="next.path">{{ next.title }} →</nuxt-link>
     </div>
-  </div>
+  </nav>
 </template>
 
 <script>
