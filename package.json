@@ -9,7 +9,7 @@
     "clean": "rm -rf .nuxt dist node_modules"
   },
   "dependencies": {
-    "@nuxt/content": "^1.6.1",
+    "@nuxt/content": "^1.7.0",
     "@nuxtjs/pwa": "^3.0.1",
     "nuxt": "^2.14.3",
     "prism-themes": "^1.4.0"
@@ -18,7 +18,7 @@
     "@nuxtjs/eslint-config": "^3.1.0",
     "@nuxtjs/eslint-module": "^2.0.0",
     "@nuxtjs/stylelint-module": "^4.0.0",
-    "@nuxtjs/tailwindcss": "^3.0.0",
+    "@nuxtjs/tailwindcss": "^3.0.2",
     "@vue/test-utils": "^1.0.4",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.1.0",
