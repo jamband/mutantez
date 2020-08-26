@@ -8,14 +8,23 @@
     </p>
     <p>
       また、プログラムのバグなどを発見した場合は
-      <LinkExternal href="https://github.com/jamband/mutantez">GitHub Issues</LinkExternal>
+      <LinkExternal :href="app.repositoryUrl">GitHub Issues</LinkExternal>
       から報告してもらえると助かります。
     </p>
   </div>
 </template>
 
 <script>
+import { APP_REPOSITORY_URL } from '~/plugins/constants'
+
 export default {
+  data () {
+    return {
+      app: {
+        repositoryUrl: APP_REPOSITORY_URL
+      }
+    }
+  },
   head () {
     return {
       title: 'Contact'

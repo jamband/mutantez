@@ -24,8 +24,6 @@ export default {
     '~/assets/css/content.css'
   ],
   plugins: [
-    '~/plugins/app',
-    '~/plugins/format'
   ],
   buildModules: [
     '@nuxtjs/eslint-module',

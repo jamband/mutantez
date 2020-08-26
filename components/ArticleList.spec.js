@@ -6,11 +6,6 @@ const factory = ({ props }) => {
     propsData: props,
     stubs: {
       'nuxt-link': RouterLinkStub
-    },
-    mocks: {
-      $format: {
-        date: jest.fn()
-      }
     }
   })
 }

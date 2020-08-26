@@ -2,23 +2,31 @@
   <div>
     <h1 class="mb-5">About</h1>
     <p>
-      {{ description }}
+      {{ app.description }}
     </p>
     <p>
       このウェブサイトはオープンソースなプロジェクトです。詳細については
-      <LinkExternal href="https://github.com/jamband/mutantez">GitHub jamband/mutantez</LinkExternal>
+      <LinkExternal :href="app.repositoryUrl">GitHub {{ app.repositoryName }}</LinkExternal>
       をご覧ください。
     </p>
   </div>
 </template>
 
 <script>
-import { APP_DESCRIPTION } from '~/plugins/constants'
+import {
+  APP_DESCRIPTION,
+  APP_REPOSITORY_URL,
+  APP_REPOSITORY_NAME
+} from '~/plugins/constants'
 
 export default {
   data () {
     return {
-      description: APP_DESCRIPTION
+      app: {
+        description: APP_DESCRIPTION,
+        repositoryUrl: APP_REPOSITORY_URL,
+        repositoryName: APP_REPOSITORY_NAME
+      }
     }
   },
   head () {

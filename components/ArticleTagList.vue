@@ -1,7 +1,9 @@
 <template>
-  <span>
-    <nuxt-link v-for="tag in tags" :key="tag" :to="tagsTo(tag)" class="px-1">{{ tag }}</nuxt-link>
-  </span>
+  <ul>
+    <li v-for="tag in tags" :key="tag" class="inline-block">
+      <nuxt-link :to="tagsTo(tag)" class="px-1">{{ tag }}</nuxt-link>
+    </li>
+  </ul>
 </template>
 
 <script>

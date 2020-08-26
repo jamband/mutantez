@@ -8,7 +8,7 @@
     <h2>Documents</h2>
     <ul>
       <li v-for="doc in docs" :key="doc.path">
-        {{ $format.date(doc.date) }}
+        {{ createdAt(doc.date) }}
         <nuxt-link :to="doc.path">{{ doc.title }}</nuxt-link>
       </li>
     </ul>
@@ -16,18 +16,19 @@
 </template>
 
 <script>
+import { APP_NAME } from '~/plugins/constants'
+import { dateFormat } from '~/plugins/format'
+
 export default {
   async asyncData ({ $content }) {
     const articles = await $content('articles', { deep: true })
       .sortBy('date', 'desc')
-      .limit(10)
       .fetch()
 
     const docs = await $content('docs', { deep: true })
       .only(['path', 'title', 'date'])
       .where({ slug: 'index' })
       .sortBy('date', 'desc')
-      .limit(10)
       .fetch()
 
     return {
@@ -35,9 +36,14 @@ export default {
       docs
     }
   },
+  methods: {
+    createdAt (value) {
+      return dateFormat(value)
+    }
+  },
   head () {
     return {
-      title: this.$app.name,
+      title: APP_NAME,
       titleTemplate: ''
     }
   }

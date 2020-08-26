@@ -3,13 +3,14 @@
     <h1>{{ doc.title }}</h1>
     <nuxt-content :document="doc" />
     <div class="mt-20 text-right">
-      作成日: {{ $format.date(doc.date) }}
+      作成日: {{ createdAt(doc.date) }}
     </div>
   </article>
 </template>
 
 <script>
-import { description } from '~/plugins/meta'
+import { description as metaDescription } from '~/plugins/meta'
+import { dateFormat } from '~/plugins/format'
 
 export default {
   async asyncData ({ $content, params, error }) {
@@ -27,15 +28,20 @@ export default {
       doc
     }
   },
+  methods: {
+    createdAt (value) {
+      return dateFormat(value)
+    }
+  },
   head () {
-    const metaDescription = description(this.doc.body)
+    const description = metaDescription(this.doc.body)
 
     return {
       title: this.doc.title,
       meta: [
-        { hid: 'description', name: 'description', content: metaDescription },
+        { hid: 'description', name: 'description', content: description },
         { hid: 'og:title', property: 'og:title', content: this.doc.title },
-        { hid: 'og:description', property: 'og:description', content: metaDescription }
+        { hid: 'og:description', property: 'og:description', content: description }
       ]
     }
   }

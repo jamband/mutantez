@@ -6,14 +6,15 @@
     <div class="text-right">
       <!-- createdAt/updatedAt gets the value from git log -->
       <!-- doc.createdAt/doc.updatedAt gets the value from birthtime/mtime -->
-      作成日: {{ $format.date(createdAt || doc.createdAt ) }}<br>
-      最終更新日: {{ $format.date(updatedAt || doc.updatedAt) }}
+      作成日: {{ date(createdAt || doc.createdAt ) }}<br>
+      最終更新日: {{ date(updatedAt || doc.updatedAt) }}
     </div>
   </article>
 </template>
 
 <script>
-import { description } from '~/plugins/meta'
+import { description as metaDescription } from '~/plugins/meta'
+import { dateFormat } from '~/plugins/format'
 
 export default {
   async asyncData ({ $content, params, error }) {
@@ -60,9 +61,9 @@ export default {
       updatedAt
     }
   },
-  computed: {
-    metaDescription () {
-      return description(this.doc.body)
+  methods: {
+    date (value) {
+      return dateFormat(value)
     }
   },
   head () {
@@ -70,12 +71,14 @@ export default {
       ? this.theme.title
       : `${this.theme.title}: ${this.doc.title}`
 
+    const description = metaDescription(this.doc.body)
+
     return {
       title,
       meta: [
-        { hid: 'description', name: 'description', content: this.metaDescription },
+        { hid: 'description', name: 'description', content: description },
         { hid: 'og:title', property: 'og:title', content: title },
-        { hid: 'og:description', property: 'og:description', content: this.metaDescription }
+        { hid: 'og:description', property: 'og:description', content: description }
       ]
     }
   }
