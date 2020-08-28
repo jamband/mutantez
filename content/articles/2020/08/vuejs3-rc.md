@@ -11,9 +11,9 @@ tags:
 
 ## 環境
 
-- Vue.js v3.0.0-rc.7
+- Vue.js v3.0.0-rc.9
 - Vue Router v4.0.0-beta.7
-- Vue Test Utils v2.0.0-beta.2
+- Vue Test Utils v2.0.0-beta.3
 
 ## Composition API について
 
@@ -54,24 +54,13 @@ export default defineComponent({
 
 使うものだけ引っ張ってくる系はファイルを見ると何に依存しているのかがぱっと見でわかるので個人的には好み。
 
-ただ、ベータ版が原因なのか、自分のただの勘違いなのか知らないが以下のような記述をすると警告が出て、本番ビルドで動作しなくなる箇所がある:
-
-```vue
-<template>
-  <RouterLink to="?page=2">Foo</RouterLink>
-  <RouterLink :to="{ query: { page: 2 } }">Foo</RouterLink>
-</template>
-```
-
-これについては原因がよくわからなかった。
-
 ## Vue Test Utils について
 
 Composition API が実装されたことでわりと重要になってくるのがテスト周りで (テストがより書きやすくなるため) 、Vue.js 3 用の Vue Test Utils も触ってみたが、Vue.js 2.x 用のやつと若干の変更はあるものの、Vue Router のスタブがまだ実装されていないみたいで (2.x 系でいう [RouterLinkStub](https://vue-test-utils.vuejs.org/api/components/))、まだ時期尚早かなと思い、深く掘り下げるのはやめた。
 
 ## まとめ
 
-そんなこんなで Vue.js 3 のリリース候補版で作成した簡単な Web サイトがあるので興味のある人は見てほしい (Pagination 周りが動作しないが) 。Vue.js 3 で Bootstrap 5 のあれやこれやをただ動作確認しただけのサイトだが、Composition API の雰囲気はコードから読み取れるはず。
+そんなこんなで Vue.js 3 のリリース候補版で作成した簡単な Web サイトがあるので興味のある人は見てほしい。Vue.js 3 で Bootstrap 5 のあれやこれやをただ動作確認しただけのサイトだが、Composition API の雰囲気はコードから読み取れるはず。
 
 - [QuietBoatz](https://quiet-boatz.netlify.app/)
 - [Github jamband/quiet-boatz](https://github.com/jamband/quiet-boatz)
