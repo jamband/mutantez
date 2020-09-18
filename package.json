@@ -9,9 +9,9 @@
     "clean": "rm -rf .nuxt dist node_modules"
   },
   "dependencies": {
-    "@nuxt/content": "^1.7.1",
+    "@nuxt/content": "^1.9.0",
     "@nuxtjs/pwa": "^3.0.2",
-    "nuxt": "^2.14.4",
+    "nuxt": "^2.14.5",
     "prism-themes": "^1.4.0"
   },
   "devDependencies": {
@@ -19,15 +19,15 @@
     "@nuxtjs/eslint-module": "^2.0.0",
     "@nuxtjs/stylelint-module": "^4.0.0",
     "@nuxtjs/tailwindcss": "^3.0.2",
-    "@vue/test-utils": "^1.0.5",
+    "@vue/test-utils": "^1.1.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^26.3.0",
-    "eslint": "^7.8.0",
+    "eslint": "^7.9.0",
     "eslint-plugin-nuxt": "^1.0.0",
     "jest": "^26.4.2",
-    "stylelint": "^13.7.0",
+    "stylelint": "^13.7.1",
     "stylelint-config-standard": "^20.0.0",
-    "vue-jest": "^3.0.6"
+    "vue-jest": "^3.0.7"
   }
 }
