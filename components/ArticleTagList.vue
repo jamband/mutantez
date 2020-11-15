@@ -8,15 +8,15 @@
 
 <script>
 export default {
-  async fetch () {
-    const docs = await this.$content('articles', { deep: true }).fetch()
-    const tags = docs.map(doc => doc.tags).flat()
-    this.tags = Array.from(new Set(tags)).sort()
-  },
   data () {
     return {
       tags: []
     }
+  },
+  async fetch () {
+    const docs = await this.$content('articles', { deep: true }).fetch()
+    const tags = docs.map(doc => doc.tags).flat()
+    this.tags = Array.from(new Set(tags)).sort()
   },
   methods: {
     tagsTo (tag) {

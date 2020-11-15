@@ -28,11 +28,6 @@ export default {
       doc
     }
   },
-  methods: {
-    createdAt (value) {
-      return dateFormat(value)
-    }
-  },
   head () {
     const description = metaDescription(this.doc.body)
 
@@ -43,6 +38,11 @@ export default {
         { hid: 'og:title', property: 'og:title', content: this.doc.title },
         { hid: 'og:description', property: 'og:description', content: description }
       ]
+    }
+  },
+  methods: {
+    createdAt (value) {
+      return dateFormat(value)
     }
   }
 }

@@ -61,11 +61,6 @@ export default {
       updatedAt
     }
   },
-  methods: {
-    date (value) {
-      return dateFormat(value)
-    }
-  },
   head () {
     const title = this.doc.slug === 'index'
       ? this.theme.title
@@ -80,6 +75,11 @@ export default {
         { hid: 'og:title', property: 'og:title', content: title },
         { hid: 'og:description', property: 'og:description', content: description }
       ]
+    }
+  },
+  methods: {
+    date (value) {
+      return dateFormat(value)
     }
   }
 }

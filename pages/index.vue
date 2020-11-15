@@ -36,15 +36,15 @@ export default {
       docs
     }
   },
-  methods: {
-    createdAt (value) {
-      return dateFormat(value)
-    }
-  },
   head () {
     return {
       title: APP_NAME,
       titleTemplate: ''
+    }
+  },
+  methods: {
+    createdAt (value) {
+      return dateFormat(value)
     }
   }
 }

@@ -16,16 +16,16 @@ export default {
       required: true
     }
   },
+  data () {
+    return {
+      docs: []
+    }
+  },
   async fetch () {
     this.docs = await this.$content(`docs/${this.theme}`)
       .only(['slug', 'path', 'title'])
       .sortBy('position')
       .fetch()
-  },
-  data () {
-    return {
-      docs: []
-    }
   }
 }
 </script>
