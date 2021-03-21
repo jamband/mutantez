@@ -23,7 +23,7 @@ npm i -D eslint babel-eslint
 設定ファイルの作成:
 
 ```
-touch .eslintrc
+touch .eslintrc .babelrc
 ```
 
 ./node_modules/.bin/eslint --init でも設定ファイルを作成できるが、個人的にあまり綺麗な設定ファイルを生成しないなぁという感じだったので今回は使わず。
@@ -51,13 +51,26 @@ touch .eslintrc
 ## ESLint の実行
 
 ```
-./node_modules/.bin/eslint . --ext .js
+./node_modules/.bin/eslint .
 
-/path/to/pages/index.js
-  1:8  error  'Head' is defined but never used  no-unused-vars
+./pages/_app.js
+error  'Component' is defined but never used  no-unused-vars
+
+./pages/index.js
+error  'Head' is defined but never used  no-unused-vars
 ```
 
 エラーになったファイルの中身を見てみる:
+
+```jsx[pages/_app.js]
+import '../styles/globals.css'
+
+function MyApp({ Component, pageProps }) {
+  return <Component {...pageProps} />
+}
+
+export default MyApp
+```
 
 ```jsx[pages/index.js]
 import Head from 'next/head'
@@ -75,7 +88,7 @@ export default function Home() {
 }
 ```
 
-Head が定義されているが使われていないというエラーだが、これは React/JSX の記述が上手く ESLint 側で設定されていないために発生するエラーなので、必要なパッケージを入れて、設定を修正していく。
+Component と Head が定義されているが使われていないというエラーだが、これは React/JSX の記述が上手く ESLint 側で設定されていないために発生するエラーなので、必要なパッケージを入れて、設定を修正していく。
 
 必要になるパッケージをインストール:
 
@@ -103,16 +116,21 @@ ESLint の設定ファイルの更新:
 ESLint を再度実行:
 
 ```
-./node_modules/.bin/eslint . --ext .js
+./node_modules/.bin/eslint .
 Warning: React version not specified in eslint-plugin-react settings. See https://github.com/yannickcr/eslint-plugin-react#configuration .
 
-/path/to/pages/index.js
-    5:5   error  'React' must be in scope when using JSX  react/react-in-jsx-scope
-    6:7   error  'React' must be in scope when using JSX  react/react-in-jsx-scope
-    ...
+./pages/_app.js
+error  'Component' is missing in props validation  react/prop-types
+error  'pageProps' is missing in props validation  react/prop-types
+error  'React' must be in scope when using JSX     react/react-in-jsx-scope
+
+./pages/index.js
+error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+error  'React' must be in scope when using JSX  react/react-in-jsx-scope
+...
 ```
 
-一行目の警告は React のバージョンを記載すれば良さそう。その他のエラーは Next.js では各コンポーネントに React をインポートする記述は必要ないので、ルールをオフにしておく。
+一行目の警告は React のバージョンを記載すれば良さそう。react/prop-types はPropTypes によるコンポーネントの props の型チェック不足によるエラーだが、TypeScript を導入する場合には不要になり、react/react-in-jsx-scope は Next.js では各コンポーネントに React をインポートする記述は必要ないので、この 2 つのルールはオフにしておく。
 
 最終的には以下のような設定になった:
 
@@ -132,6 +150,7 @@ Warning: React version not specified in eslint-plugin-react settings. See https:
   "rules": {
     "semi": ["error", "never"],
     "quotes": ["error", "single"],
+    "react/prop-types": "off",
     "react/react-in-jsx-scope": "off"
   }
 }

@@ -7,10 +7,10 @@ position: 6
 
 Next.js (React) と TypeScript は非常に相性が良いし、型安全や、VSCode の補完強化などを考えると TypeScript は是非入れておきたい。ということで導入していく。
 
-TypeScript のインストール:
+TypeScript とその他必要なパッケージのインストール:
 
 ```
-npm i -D typescript
+npm i -D typescript @types/react @types/node
 ```
 
 TypeScript の空の設定ファイルを作成:
@@ -20,18 +20,6 @@ touch tsconfig.json
 ```
 
 dev コマンドの実行:
-
-```
-npm run dev
-```
-
-いつかのパッケージをインストールしろと言われるのでインストール:
-
-```
-npm i -D @types/react @types/node
-```
-
-再度 dev コマンドを実行:
 
 ```
 npm run dev
@@ -64,9 +52,7 @@ ESLint の設定ファイルの更新:
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
-    "plugin:prettier/recommended",
-    "prettier/@typescript-eslint",
-    "prettier/react"
+    "prettier"
   ],
   "settings": {
     "react": {
@@ -74,39 +60,67 @@ ESLint の設定ファイルの更新:
     }
   },
   "rules": {
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "react/prop-types": "off",
     "react/react-in-jsx-scope": "off"
   }
 }
 ```
+VSCode の設定ファイルの更新:
 
-ESLint 上で Prettier を動かしている場合、ESLint や eslint-plugin-react のコード整形に関連するルールをオフにした指定方法と同様に、prettier/@typescript-eslint を指定して plugin:@typescript-eslint/recommended のコード整形に関連するルールをオフにしておく。
+```json[.vscode/settings.json]
+{
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.fixAll.stylelint": true
+  }
+}
+```
 
 ## 動作を確認する
 
+プロジェクトルートに components ディレクトリを作成し、Foo コンポーネントを作成:
+
 ```tsx[components/Foo.tsx]
 type Props = {
-  bar: string
-  baz: number
-}
+  bar: string;
+  baz: number;
+};
 
-export default function Foo(props: Props): JSX.Element {
+export const Foo: React.VFC<Props> = (props) => {
   return (
     <>
       <h1>{props.bar}</h1>
       <div>{props.baz + 1}</div>
     </>
-  )
-}
+  );
+};
 ```
 
-```tsx[pages/index.tsx]
-import Foo from '../components/Foo'
+トップページにて Foo コンポーネントを使う:
 
-export default function Home(): JSX.Element {
+```tsx[pages/index.tsx]
+import { Foo } from "../components/Foo";
+
+export default function Home() {
   return (
     <>
       <Foo bar="bar" baz={5} />
     </>
-  )
+  );
 }
 ```
+
+補完や自動整形などが効いているか確認する。

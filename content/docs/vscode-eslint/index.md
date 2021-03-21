@@ -12,14 +12,14 @@ position: 1
 
 ## 環境
 
-- VSCode 1.53.x
+- VSCode 1.54.x
 - Node.js 12.x
 - Next.js 10.0.x
-- ESLint 7.20.x
-- stylelint 13.10.x
+- ESLint 7.22.x
+- stylelint 13.12.x
 - Prettier 2.2.x
-- TypeScript 4.1.x
-- Jest 26.1.x
+- TypeScript 4.2.x
+- Jest 26.6.x
 - husky 4.3.x
 - lint-staged 10.5.x
 

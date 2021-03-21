@@ -36,16 +36,15 @@ identity-obj-proxy はスタイルシートや画像など、アセット関連�
 Jest の設定ファイルの作成:
 
 ```js[jest.config.js]
-/* eslint-disable no-undef */
 module.exports = {
-  setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect'],
+  setupFilesAfterEnv: ["@testing-library/jest-dom/extend-expect"],
   transform: {
-    '^.+\\.(ts|tsx)$': 'babel-jest',
+    "^.+\\.(ts|tsx)$": "babel-jest",
   },
   moduleNameMapper: {
-    '\\.(css|less|sass|scss)$': 'identity-obj-proxy',
+    "\\.(css|scss)$": "identity-obj-proxy",
   },
-}
+};
 ```
 
 setupFilesAfterEnv はテストの実行前に何かをさせるときに使う。上記の場合は jest-dom のカスタムマッチャーを読み込み、各テストファイルで import せずに使えるようにしている。
@@ -55,7 +54,7 @@ ESLint の設定ファイルの更新:
 ```json[.eslintrc]
 {
   "env": {
-    "jest": true
+    "node": true
   },
   ...
 ```
@@ -76,18 +75,18 @@ test コマンドを package.json に追加:
 テストファイル:
 
 ```tsx[components/TotalCount.spec.tsx]
-import { render, screen } from '@testing-library/react'
-import TotalCount from './TotalCount'
+import { render, screen } from "@testing-library/react";
+import { TotalCount } from "./TotalCount";
 
-test('total: 0', () => {
-  render(<TotalCount total={0} />)
-  expect(screen.getByText('No results found')).toBeInTheDocument()
-})
+test("total: 0", () => {
+  render(<TotalCount total={0} />);
+  expect(screen.getByText("No results found")).toBeInTheDocument();
+});
 
-test('total: 10', () => {
-  render(<TotalCount total={10} />)
-  expect(screen.getByText('10 results')).toBeInTheDocument()
-})
+test("total: 10", () => {
+  render(<TotalCount total={10} />);
+  expect(screen.getByText("10 results")).toBeInTheDocument();
+});
 ```
 
 コンポーネントのスタイルファイル:
@@ -101,19 +100,19 @@ test('total: 10', () => {
 コンポーネント:
 
 ```tsx[components/TotalCount.tsx]
-import styles from './TotalCount.module.scss'
+import styles from "./TotalCount.module.scss";
 
 type Props = {
-  total: number
-}
+  total: number;
+};
 
-export default function totalCount(props: Props): JSX.Element {
+export const TotalCount: React.VFC<Props> = (props) => {
   return (
     <p className={styles.foo}>
-      {props.total === 0 ? 'No results found' : `${props.total} results`}
+      {props.total === 0 ? "No results found" : `${props.total} results`}
     </p>
-  )
-}
+  );
+};
 ```
 
 テストの実行:
