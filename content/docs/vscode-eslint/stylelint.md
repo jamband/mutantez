@@ -51,23 +51,4 @@ npm i -D sass stylelint stylelint-config-standard stylelint-order stylelint-scss
 
 ## 動作を確認する
 
-実際にコンポーネントを作って動作を確認してみる:
-
-```jsx[components/Foo.js]
-import styles from './Foo.module.scss'
-
-export default function Foo() {
-  return (
-    <div className={styles.bar}>
-      Baz
-    </div>
-  )
-}
-```
-
-```scss[components/Foo.module.scss]
-.bar {
-  background-color: green;
-  color: white;
-}
-```
+styles/globals.css を開いて、保存時に自動整形などがされるか確認する。
