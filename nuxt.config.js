@@ -60,5 +60,8 @@ export default {
     background_color: '#fff',
     display: 'standalone',
     start_url: '/'
+  },
+  tailwindcss: {
+    jit: true
   }
 }
