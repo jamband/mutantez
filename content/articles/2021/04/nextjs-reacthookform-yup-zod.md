@@ -260,10 +260,7 @@ export default function YupPage() {
       headers: {
         "Content-Type": "application/json",
       },
-      data: {
-        foo: data.foo,
-        bar: data.bar,
-      },
+      body: JSON.stringify(data),
     });
 
     const { errors } = await response.json();
