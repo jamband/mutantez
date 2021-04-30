@@ -5,6 +5,8 @@
     "generate": "nuxt generate",
     "start": "nuxt start",
     "test": "jest",
+    "eslint": "eslint .",
+    "stylelint": "stylelint **/*.css",
     "clear": "rm -rf .eslintcache .nuxt dist",
     "clean": "rm -rf .eslintcache .nuxt dist node_modules"
   },
@@ -26,9 +28,9 @@
     "eslint": "^7.25.0",
     "eslint-plugin-nuxt": "^2.0.0",
     "jest": "^26.6.3",
-    "postcss": "^8.2.12",
-    "stylelint": "^13.12.0",
-    "stylelint-config-standard": "^21.0.0",
+    "postcss": "^8.2.13",
+    "stylelint": "^13.13.0",
+    "stylelint-config-standard": "^22.0.0",
     "vue-jest": "^3.0.7"
   }
 }

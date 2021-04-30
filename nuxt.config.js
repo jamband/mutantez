@@ -62,6 +62,5 @@ export default {
     start_url: '/'
   },
   tailwindcss: {
-    jit: true
   }
 }
