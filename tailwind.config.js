@@ -2,6 +2,9 @@ module.exports = {
   mode: 'jit',
   theme: {
     container: {
+      padding: '1rem'
+    },
+    screens: {
       md: '720px'
     },
     fontFamily: {
