@@ -3,7 +3,6 @@ title: Nuxt.js と Bootstrap 5
 date: 2020-08-03
 tags:
     - nuxt
-    - bootstrap
     - css
 ---
 
