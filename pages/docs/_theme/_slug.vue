@@ -46,7 +46,7 @@ export default {
 
     let createdAt, updatedAt
     if (process.server) {
-      const { firstCreated, lastUpdated } = require('~/plugins/doc')
+      const { firstCreated, lastUpdated } = require('~/utils/doc')
       const path = `${process.cwd()}/content/${doc.path}${doc.extension}`
       createdAt = firstCreated(path)
       updatedAt = lastUpdated(path)
