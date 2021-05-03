@@ -1,4 +1,4 @@
-import { APP_NAME, APP_URL, APP_DESCRIPTION } from './plugins/constants'
+import { APP_NAME, APP_URL, APP_DESCRIPTION } from './constants/app'
 
 export default {
   target: 'static',

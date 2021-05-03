@@ -1,5 +1,5 @@
 import { shallowMount, RouterLinkStub } from '@vue/test-utils'
-import ArticleTagList from '~/components/ArticleTagList'
+import ArticleTagList from './ArticleTagList'
 
 const factory = ({ props }) => {
   return shallowMount(ArticleTagList, {

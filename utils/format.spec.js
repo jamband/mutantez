@@ -1,4 +1,4 @@
-import { dateFormat } from '~/plugins/format'
+import { dateFormat } from './format'
 
 test('dateFormat', () => {
   expect(dateFormat('1999-12-31')).toBe('1999.12.31')

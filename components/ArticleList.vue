@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import { dateFormat } from '~/plugins/format'
+import { dateFormat } from '~/utils/format'
 
 export default {
   props: {

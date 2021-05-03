@@ -6,21 +6,19 @@
         <nuxt-link :to="{ name: 'about' }">About</nuxt-link>
       </nav>
       <div class="w-1/2 text-right">
-        &copy; {{ new Date().getFullYear() }} {{ app.name }}
+        &copy; {{ new Date().getFullYear() }} {{ appName }}
       </div>
     </div>
   </footer>
 </template>
 
 <script>
-import { APP_NAME } from '~/plugins/constants'
+import { APP_NAME } from '~/constants/app'
 
 export default {
   data () {
     return {
-      app: {
-        name: APP_NAME
-      }
+      appName: APP_NAME
     }
   }
 }

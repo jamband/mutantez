@@ -13,8 +13,8 @@
 </template>
 
 <script>
-import { description as metaDescription } from '~/plugins/meta'
-import { dateFormat } from '~/plugins/format'
+import { description as metaDescription } from '~/utils/meta'
+import { dateFormat } from '~/utils/format'
 
 export default {
   async asyncData ({ $content, params, error }) {

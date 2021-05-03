@@ -18,8 +18,8 @@
 </template>
 
 <script>
-import { APP_NAME } from '~/plugins/constants'
-import { dateFormat } from '~/plugins/format'
+import { APP_NAME } from '~/constants/app'
+import { dateFormat } from '~/utils/format'
 import { tags } from '~/utils/tags'
 
 export default {

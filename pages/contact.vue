@@ -8,21 +8,19 @@
     </p>
     <p>
       また、プログラムのバグなどを発見した場合は
-      <LinkExternal :href="app.repositoryUrl">GitHub Issues</LinkExternal>
+      <LinkExternal :href="appRepositoryUrl">GitHub Issues</LinkExternal>
       から報告してもらえると助かります。
     </p>
   </div>
 </template>
 
 <script>
-import { APP_REPOSITORY_URL } from '~/plugins/constants'
+import { APP_REPOSITORY_URL } from '~/constants/app'
 
 export default {
   data () {
     return {
-      app: {
-        repositoryUrl: APP_REPOSITORY_URL
-      }
+      appRepositoryUrl: APP_REPOSITORY_URL
     }
   },
   head () {

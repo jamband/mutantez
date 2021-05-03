@@ -2,11 +2,11 @@
   <div>
     <h1 class="mb-5">About</h1>
     <p>
-      {{ app.description }}
+      {{ appDescription }}
     </p>
     <p>
       このウェブサイトはオープンソースなプロジェクトです。詳細については
-      <LinkExternal :href="app.repositoryUrl">GitHub {{ app.repositoryName }}</LinkExternal>
+      <LinkExternal :href="appRepositoryUrl">GitHub {{ appRepositoryName }}</LinkExternal>
       をご覧ください。
     </p>
   </div>
@@ -17,16 +17,14 @@ import {
   APP_DESCRIPTION,
   APP_REPOSITORY_URL,
   APP_REPOSITORY_NAME
-} from '~/plugins/constants'
+} from '~/constants/app'
 
 export default {
   data () {
     return {
-      app: {
-        description: APP_DESCRIPTION,
-        repositoryUrl: APP_REPOSITORY_URL,
-        repositoryName: APP_REPOSITORY_NAME
-      }
+      appDescription: APP_DESCRIPTION,
+      appRepositoryUrl: APP_REPOSITORY_URL,
+      appRepositoryName: APP_REPOSITORY_NAME
     }
   },
   head () {

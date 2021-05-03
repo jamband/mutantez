@@ -1,6 +1,6 @@
 import { shallowMount, RouterLinkStub } from '@vue/test-utils'
-import TheFooter from '~/components/TheFooter'
-import { APP_NAME } from '~/plugins/constants'
+import TheFooter from './TheFooter'
+import { APP_NAME } from '~/constants/app'
 
 const factory = () => {
   return shallowMount(TheFooter, {

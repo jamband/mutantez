@@ -1,5 +1,5 @@
 import { shallowMount, RouterLinkStub } from '@vue/test-utils'
-import ArticleList from '~/components/ArticleList'
+import ArticleList from './ArticleList'
 
 const factory = ({ props }) => {
   return shallowMount(ArticleList, {
