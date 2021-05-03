@@ -39,6 +39,11 @@ export default {
   },
   build: {
     // analyze: true,
+    babel: {
+      plugins: [
+        ['@babel/plugin-proposal-private-methods', { loose: true }]
+      ]
+    }
   },
   generate: {
     fallback: '404.html',
