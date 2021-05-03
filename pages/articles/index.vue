@@ -1,22 +1,27 @@
 <template>
   <div>
+    <h2>Tags</h2>
+    <article-tag-list :tags="tags" class="mb-8" />
     <h2>Articles</h2>
-    <article-list :docs="docs" />
-    <h2 class="mt-8">Tags</h2>
-    <article-tag-list />
+    <article-list :articles="articles" />
   </div>
 </template>
 
 <script>
+import { tags } from '~/utils/tags'
+
 export default {
   async asyncData ({ $content }) {
-    const path = 'articles'
-    const docs = await $content(path, { deep: true })
+    const contents = await $content('articles', { deep: true })
+      .fetch()
+
+    const articles = await $content('articles', { deep: true })
       .sortBy('date', 'desc')
       .fetch()
 
     return {
-      docs
+      tags: tags(contents),
+      articles
     }
   },
   head () {

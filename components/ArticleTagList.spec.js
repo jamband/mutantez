@@ -1,27 +1,24 @@
 import { shallowMount, RouterLinkStub } from '@vue/test-utils'
 import ArticleTagList from '~/components/ArticleTagList'
 
-const tags = [
-  'foo',
-  'bar',
-  'baz'
-]
-
-const factory = () => {
+const factory = ({ props }) => {
   return shallowMount(ArticleTagList, {
-    data () {
-      return {
-        tags
-      }
-    },
+    propsData: props,
     stubs: {
       'nuxt-link': RouterLinkStub
     }
   })
 }
 
+const tags = ['foo', 'bar', 'baz']
+
 test('route and text', () => {
-  const a = factory().findAll('a')
+  const wrapper = factory({
+    props: {
+      tags
+    }
+  })
+  const a = wrapper.findAll('a')
   expect(a.length).toBe(3)
   for (const [i, tag] of Object.entries(tags)) {
     expect(a.at(i).props().to).toEqual({ name: 'articles-tags-slug', params: { slug: tag } })

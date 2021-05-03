@@ -1,8 +1,8 @@
 <template>
   <ul>
-    <li v-for="doc in docs" :key="doc.slug" class="truncate">
-      {{ createdAt(doc.date) }}
-      <nuxt-link :to="doc.path">{{ doc.title }}</nuxt-link>
+    <li v-for="article in articles" :key="article.slug" class="truncate">
+      {{ createdAt(article.date) }}
+      <nuxt-link :to="article.path">{{ article.title }}</nuxt-link>
     </li>
   </ul>
 </template>
@@ -12,7 +12,7 @@ import { dateFormat } from '~/plugins/format'
 
 export default {
   props: {
-    docs: {
+    articles: {
       type: Array,
       required: true
     }

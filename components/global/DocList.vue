@@ -1,12 +1,6 @@
 <template>
   <nav aria-label="Documents navigation">
-    <template v-if="$fetchState.pending">
-      <ContentLoading text="ドキュメントのリストを読み込んでいます..." />
-    </template>
-    <div v-else-if="$fetchState.error">
-      ドキュメントのリストの読み込みに失敗しました。
-    </div>
-    <ol v-else>
+    <ol>
       <li v-for="doc in docs" :key="doc.slug">
         <nuxt-link :to="doc.path">{{ doc.title }}</nuxt-link>
       </li>
