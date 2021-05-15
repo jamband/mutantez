@@ -1,7 +1,7 @@
 <template>
   <ul>
     <li v-for="(tag, index) in tags" :key="index" class="inline-block">
-      <nuxt-link :to="tagsTo(tag)" class="pr-2">{{ tag }}</nuxt-link>
+      <nuxt-link :to="tagsTo(tag)" class="mr-2">{{ tag }}</nuxt-link>
     </li>
   </ul>
 </template>
