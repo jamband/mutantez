@@ -27,6 +27,7 @@ export default {
   ],
   buildModules: [
     '@nuxtjs/eslint-module',
+    '@nuxtjs/google-fonts',
     '@nuxtjs/stylelint-module',
     '@nuxtjs/tailwindcss'
   ],
@@ -56,6 +57,14 @@ export default {
         theme: 'prism-themes/themes/prism-coldark-dark.css'
       }
     }
+  },
+  googleFonts: {
+    families: {
+      'Source+Sans+Pro': [400, 600]
+    },
+    display: 'swap',
+    download: true,
+    stylePath: 'fonts/fonts.css'
   },
   manifest: {
     name: APP_NAME,
