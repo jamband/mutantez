@@ -1,5 +1,5 @@
 <template>
-  <footer class="py-3 bg-gray-100">
+  <footer class="py-3 bg-gray-800">
     <div class="flex container mx-auto">
       <nav class="w-1/2" aria-label="Footer navigation">
         <nuxt-link :to="{ name: 'contact' }" class="pr-3">Contact</nuxt-link>

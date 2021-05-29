@@ -2,7 +2,7 @@
   @apply my-5;
 
   & h2 {
-    @apply mt-10 mb-5 pb-1 border-b border-gray-200 text-3xl;
+    @apply mt-10 mb-5 pb-1 border-b border-gray-600 text-3xl;
   }
 
   & ul {
@@ -22,7 +22,7 @@
   }
 
   & code {
-    @apply text-sm;
+    @apply text-xs md:text-sm;
   }
 }
 
@@ -34,7 +34,7 @@
   }
 
   & .filename {
-    @apply absolute z-10 px-2 top-0 left-0 rounded-tl text-gray-200 bg-gray-800 text-sm;
+    @apply absolute z-10 px-2 top-0 left-0 rounded-tl text-gray-100 bg-gray-800 text-xs md:text-sm;
 
     & + pre {
       @apply pt-8;

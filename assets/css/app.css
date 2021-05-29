@@ -1,6 +1,6 @@
 html,
 body {
-  @apply text-gray-700 text-base;
+  @apply text-gray-100 text-base bg-gray-900;
 }
 
 h1 {
