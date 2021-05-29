@@ -16,5 +16,7 @@ p {
 }
 
 a {
-  @apply underline;
+  text-decoration-color: #616d87;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
 }
