@@ -1,10 +1,10 @@
 <template>
   <article>
     <h1>{{ doc.title }}</h1>
-    <nuxt-content :document="doc" />
-    <div class="mt-20 text-right">
+    <div class="mt-8 text-right">
       作成日: {{ createdAt(doc.date) }}
     </div>
+    <nuxt-content :document="doc" />
   </article>
 </template>
 

@@ -2,7 +2,7 @@
   <ul>
     <li v-for="article in articles" :key="article.slug" class="truncate">
       {{ createdAt(article.date) }}
-      <nuxt-link :to="article.path">{{ article.title }}</nuxt-link>
+      <nuxt-link :to="article.path" class="ml-1">{{ article.title }}</nuxt-link>
     </li>
   </ul>
 </template>
