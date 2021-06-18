@@ -41,3 +41,7 @@
     }
   }
 }
+
+.nuxt-content-editor {
+  @apply bg-gray-900;
+}
