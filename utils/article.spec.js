@@ -1,5 +1,5 @@
 import crypto from 'crypto'
-import { firstCreated, lastUpdated } from './doc'
+import { firstCreated, lastUpdated } from './article'
 
 const path1 = `${process.cwd()}/package.json`
 const path2 = `${process.cwd()}/foo.json`

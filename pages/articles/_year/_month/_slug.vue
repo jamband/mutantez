@@ -1,10 +1,10 @@
 <template>
   <article>
-    <h1>{{ doc.title }}</h1>
+    <h1>{{ article.title }}</h1>
     <div class="mt-8 text-right">
-      作成日: {{ createdAt(doc.date) }}
+      作成日: {{ createdAt(article.date) }}
     </div>
-    <nuxt-content :document="doc" />
+    <nuxt-content :document="article" />
   </article>
 </template>
 
@@ -16,25 +16,25 @@ export default {
   async asyncData ({ $content, params, error }) {
     const { year, month, slug } = params
 
-    let doc
+    let article
     try {
-      doc = await $content('articles', year, month, slug || '').fetch()
+      article = await $content('articles', year, month, slug || '').fetch()
     } catch (e) {
       return error({ statusCode: 404, message: 'ページが見つかりませんでした' })
     }
 
     return {
-      doc
+      article
     }
   },
   head () {
-    const description = metaDescription(this.doc.body)
+    const description = metaDescription(this.article.body)
 
     return {
-      title: this.doc.title,
+      title: this.article.title,
       meta: [
         { hid: 'description', name: 'description', content: description },
-        { hid: 'og:title', property: 'og:title', content: this.doc.title },
+        { hid: 'og:title', property: 'og:title', content: this.article.title },
         { hid: 'og:description', property: 'og:description', content: description }
       ]
     }
