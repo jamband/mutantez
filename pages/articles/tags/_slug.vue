@@ -6,7 +6,7 @@
     <article-list :articles="articles" />
     <p v-if="!articles.length">上記で絞られたタグに関連する記事は見つかりませんでした</p>
     <div class="mt-5 mb-8 text-right">
-      <nuxt-link :to="{ name: 'articles' }">すべての記事一覧を見る</nuxt-link>
+      <nuxt-link :to="{ name: 'index' }">すべての記事一覧を見る</nuxt-link>
     </div>
   </div>
 </template>

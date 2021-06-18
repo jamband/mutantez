@@ -15,11 +15,10 @@ import { dateFormat } from '~/utils/format'
 export default {
   async asyncData ({ $content, params, error }) {
     const { year, month, slug } = params
-    const path = 'articles'
 
     let doc
     try {
-      doc = await $content(path, year, month, slug || '').fetch()
+      doc = await $content('articles', year, month, slug || '').fetch()
     } catch (e) {
       return error({ statusCode: 404, message: 'ページが見つかりませんでした' })
     }
