@@ -16,7 +16,6 @@ p {
 }
 
 a {
-  text-decoration-color: #616d87;
-  text-decoration-line: underline;
-  text-decoration-style: solid;
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
 }
