@@ -62,5 +62,7 @@ Composition API が実装されたことでわりと重要になってくるの�
 
 そんなこんなで Vue.js 3 のリリース候補版で作成した簡単な Web サイトがあるので興味のある人は見てほしい。Vue.js 3 で Bootstrap 5 のあれやこれやをただ動作確認しただけのサイトだが、Composition API の雰囲気はコードから読み取れるはず。
 
-- [QuietBoatz](https://quiet-boatz.netlify.app/)
-- [Github jamband/quiet-boatz](https://github.com/jamband/quiet-boatz)
+- ~~QuietBoatz~~
+- ~~Github jamband/quiet-boatz~~
+
+上記のリポジトリは現在存在しません (長期的なメンテナンスが難しいと判断したため削除した) 。Nuxt.js 3 がリリースされそうな頃合いにまた何か記事を書こうかなと思う。
